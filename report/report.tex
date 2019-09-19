@@ -1,0 +1,152 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Documentation for the Ampco-Pgh IT Department.
+%
+% All specific layout options for this book are
+% documented in the sections below.  Standard
+% default options are included.  Additional 
+% package options are documented in SNIPPETS.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%% Preamble %%%%%
+
+  %% Document Class and Margins %%
+	\documentclass[10pt]{article}
+	% Margins to support printing on a full sheet of paper with 3 hole punching %
+	\usepackage[letterpaper,top=.5in,bottom=.5in,right=.5in,left=.5in]{geometry}
+
+  %% Packages Used for This Document %%
+	
+	% Package for colored cells in tables %
+	\usepackage[table]{xcolor}	% Must be above tikz or graphicx for precedence
+
+	% Package for including graphics %
+	\usepackage{graphicx}
+
+	% Package to indent all first paragraphs after section headings %
+	\usepackage{indentfirst}
+	
+	% Package for underline and strikethrough fonts %
+	\usepackage[normalem]{ulem}
+	
+	% Package for including PDF documents %
+	\usepackage{pdfpages}
+	
+	% Package for commenting large sections of text %
+	\usepackage{comment}
+	
+	% Package for full features outlines %
+	\usepackage{outlines}
+
+	% Package for creating long, cross page tables %
+	\usepackage{longtable}
+
+	% Package for spanning multiple rows in tables %
+	\usepackage{multirow}
+
+	% Package for turning schedule to landscape %
+	\usepackage{lscape}
+	
+	% Package for embedding code into a document %
+	\usepackage{listings}
+	
+	\usepackage{spreadtab}
+	
+	% Package for Biolinum/Libertine Font %
+	\usepackage[T1]{fontenc}
+	\usepackage{libertine}
+
+	% This font provides the \ding characters %
+	\usepackage{pifont}
+
+	% Package for creating customizable section titles %
+	\usepackage[explicit,pagestyles]{titlesec}
+	
+	% Package for header and footer creation %
+	\usepackage{fancyhdr}
+	\pagestyle{fancy}
+
+  %% Font Changes %%
+	% Sets base font as sans serif Biolinum (Libertine) font
+	\renewcommand*\familydefault{\sfdefault}
+
+  %% Color Definition %%
+	\definecolor{Color1}{HTML}{F15A29}
+
+  %% Header and Footer %%
+
+	% Width of the line in the footer %
+	\renewcommand{\footrulewidth}{0pt}
+	\renewcommand{\headrulewidth}{0pt}
+
+	% Options for the header %
+	\lhead{} %blank in all right header spaces
+	\chead{} %blank in all right header spaces
+	\rhead{} %blank in all right header spaces
+
+	% Options for the footer %
+	\lfoot{Revision: \today}
+	\cfoot{\thepage}
+	\rfoot{{\bfseries Campbell Clan Financial Reporting}}
+
+  %% Macro \newcommand Changes %%
+	% Sets the HRule command for the title page %
+	\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+	% Creates a CLI notation
+	\newcommand{\CLI}[1]{\colorbox{gray}{\color{white}#1}}
+
+  %% Section and Subsection Style Changes %%
+
+   % Section styling %
+	\titleformat{name=\section}
+	{}
+	{}
+	{0pt}
+	{\color{Color1}\large\bfseries #1}
+	[{\titlerule[2pt]}]
+
+   % Subsection styling %
+	\titleformat{name=\subsection}
+	{\normalfont\large\bfseries}
+	{}{0pt}{\color{Color1}\hspace{1em} -- \uline{ #1 } --}
+	
+   % Subsubsection styling %
+	\titleformat{name=\subsubsection}
+	{\normalfont\bfseries}
+	{}{0pt}{\color{Color1}\hspace{2em} #1}
+
+%%%% Document Class %%%%
+
+  %% Document Beginning %%
+	\begin{document}
+
+  %% Title Section %%
+
+	% Company Logo and Information %
+%	\begin{figure}[ht]
+%	\begin{minipage}[ht][.7in][c]{0.3\linewidth}
+%		\centering
+%		\includegraphics[width=.6\textwidth]{logo}
+%	\end{minipage}
+	% Document Name %
+%	\hspace{0.5cm}
+%	\begin{minipage}[ht][.7in][c]{0.6\linewidth}
+%		\begin{flushright}
+			\noindent
+			{\color{Color1}\large Campbell Clan}
+%			\rule{\linewidth}{1mm}
+			{\color{Color1}\Large Financial Reporting} 
+%			\\ 
+%			{\normalfont Revision: \today }
+%		\end{flushright}
+%	\end{minipage}
+%	\end{figure}
+  
+
+  %% Includes %%
+	%\input{toc.tex}				%This file contains all of the production \input{}
+	\input{report_outfile}				%This file contains all of the production \input{}
+	
+  %% Document Ending %%
+	\end{document}

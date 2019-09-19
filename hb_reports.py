@@ -5,13 +5,18 @@
 # -- Imports -- #
 import sys
 import os
+import pwd
+import yaml
+import logging
+import logging.handlers
  
 import legacy_complete_report
+import monthly_report
 
 # -- Define Variables -- #
 
-menu_actions  = {}  
- 
+menu_actions  = {}
+
 # -- Menu Functions -- #
  
 # Main menu
@@ -20,8 +25,10 @@ def main_menu():
     
     print("Welcome,\n")
     print("Please choose the menu you want to start:")
+    print("1. Run a Monthly Report")
     print("1. Menu 1")
-    print("2. Menu 2")
+    print("11. Menu 1")
+    print("12. Menu 2")
     print("99 BETA - Complete LEGACY Monthly Report")
     print("\n0. Quit")
     choice = input(" >>  ")
@@ -77,8 +84,9 @@ def exit():
 # Menu definition
 menu_actions = {
     'main_menu': main_menu,
-    '1': menu1,
-    '2': menu2,
+    '1': monthly_report.Monthly_Report,
+    '11': menu1,
+    '12': menu2,
     '9': back,
     '99': legacy_complete_report.Complete_Report_NEW,
     '0': exit,
