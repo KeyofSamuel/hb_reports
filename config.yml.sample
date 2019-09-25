@@ -1,0 +1,5 @@
+lobal:
+  logging: enable
+  log_level: INFO
+  logpath: /home/USER/.config/hb_reports/hb_reports.log
+  raw_files: /home/USER/raw
